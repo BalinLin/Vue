@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>test</title>
+	</head>
+	<body>
+		<div id="timeDiv" @click="getTime" :title="nowTime">
+			{{content}}
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			let timeData = {
+			    content:'點我看時間',
+			    nowTime:'目前是' + String(new Date()),
+			}
+			let timeMethods = {
+			    getTime: ()=>{
+			        console.log(String(new Date()))
+			    },
+			}
+			let timeDiv = new Vue({
+			    el:'#timeDiv',
+			    data : timeData,
+			    methods: timeMethods,
+			})
+			Vue.config.devtools = true
+		</script>
+	</body>
+</html>
